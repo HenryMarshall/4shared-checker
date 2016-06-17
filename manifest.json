@@ -4,6 +4,11 @@
   "name": "4shared link checker",
   "version": "0.0.1",
 
+  "background": {
+    "scripts": [ "jquery-3.0.0.min.js", "background.js" ],
+    "persistant": false
+  },
+
   "content_scripts": [
     {
       "matches": [ "https://cse.google.com/cse/*" ],
@@ -14,6 +19,7 @@
   "browser_action": {
     "default_icon": "icon.png"
   },
+
   "permissions": [
     "https://*.4shared.com/",
     "http://*.4shared.com/"
