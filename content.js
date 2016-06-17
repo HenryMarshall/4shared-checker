@@ -1,13 +1,13 @@
 
 $("#content-holder").prepend("<button id='my_validate'>validate</button>")
 
+// set up listeners to pemrit communication with background thread
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log("message received")
-
     if (request.message === "validated_link") {
-      console.log("received request: ", request)
       var newColor = request.isValid ? "green" : "red"
+      // I was unsuccessful passing the jquery object around directly so I just
+      // refound the link by its href.
       $(`.gsc-table-result a.gs-title[href='${request.url}']`).css('color', newColor)
     }
   }
@@ -29,7 +29,9 @@ function getAllResults() {
 }
 
 function validateLink(href) {
+  // sending messages to the background is easy!
   chrome.runtime.sendMessage({
+    // arbitrary object as payload
     message: "validate_link",
     url: href
   })
