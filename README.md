@@ -8,4 +8,4 @@ chrome extension. It adds a validate button to a [Google Custom Search
 Engine](https://cse.google.com/cse/) which checks to see if results are still
 valid and colors them accordingly.
 
-![screenshot](https://github.com/hbaughman/4shared-checker/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/hbaughman/4shared-checker/master/screenshot.png)
